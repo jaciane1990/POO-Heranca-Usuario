@@ -1,12 +1,19 @@
 import { Usuario } from './Usuario';
 
 export class Administrador extends Usuario {
-  constructor(nome, email) {
-    super(nome, email); // chama o construtor da superclasse
-    this.codigoSeguranca = 'abc'; // valor padrão
+    #codigoSeguranca: string;
+
+  constructor(nome: string, email: string) {
+    super(nome, email);
+    this.#codigoSeguranca = 'abc'; // também com "#" para indicar encapsulamento
   }
 
-  alterarCodigoSeguranca(novoCodigo) {
-    this.codigoSeguranca = novoCodigo;
+  alterarCodigoSeguranca(novoCodigo: string) {
+    this.#codigoSeguranca = novoCodigo;
+  }
+
+  getCodigoSeguranca() {
+    return this.#codigoSeguranca;
   }
 }
+

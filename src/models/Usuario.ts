@@ -1,11 +1,23 @@
 export class Usuario {
-  constructor(nome, email) {
-    this.nome = nome;
-    this.email = email;
-    this.senha = '123'; // senha padrão
+    #nome: string;
+    #email: string;
+    #senha: string;
+
+  constructor(nome: string, email: string) {
+    this.#nome = nome;
+    this.#email = email;
+    this.#senha = '123'; // atributo "protegido" (por convenção, usando _)
   }
 
-  autenticar(senha) {
-    return this.senha === senha;
+  autenticar(senha: string) {
+    return this.#senha === senha;
+  }
+
+  getNome() {
+    return this.#nome;
+  }
+
+  getEmail() {
+    return this.#email;
   }
 }

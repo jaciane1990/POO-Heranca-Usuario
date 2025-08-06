@@ -1,18 +1,14 @@
-import './App.css'
-import { Usuario } from './models/Usuario';
+import { Administrador } from './models/Administrador';
 
 function App() {
-  const usuario = new Usuario('João', 'joao@email.com');
+  const admin = new Administrador('Jaciane', 'jaciane@admin.com');
 
-  console.log(usuario.autenticar('123')); // true
-  console.log(usuario.autenticar('senhaErrada')); // false
-
+  // Exibe os dados usando os métodos getters
   return (
     <>
-      <h1>Usuário: {usuario.nome}</h1>
-      <p>Email: {usuario.email}</p>
-      <p>Autenticado com '123'? {usuario.autenticar('123') ? 'Sim' : 'Não'}</p>
-      <p>Autenticado com 'abc'? {usuario.autenticar('abc') ? 'Sim' : 'Não'}</p>
+      <h1>Administrador: {admin.getNome()}</h1>
+      <p>Email: {admin.getEmail()}</p>
+      <p>Código de Segurança: {admin.getCodigoSeguranca()}</p>
     </>
   );
 }
