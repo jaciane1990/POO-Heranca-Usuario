@@ -1,14 +1,9 @@
 import { Usuario } from './Usuario';
 
 export class Administrador extends Usuario {
-    #codigoSeguranca: string;
+    #codigoSeguranca: string = 'abc';
 
-  constructor(nome: string, email: string) {
-    super(nome, email);
-    this.#codigoSeguranca = 'abc'; // também com "#" para indicar encapsulamento
-  }
-
-  alterarCodigoSeguranca(novoCodigo: string) {
+  alterarCodigoSeguranca(novoCodigo: string): void {
     this.#codigoSeguranca = novoCodigo;
   }
 

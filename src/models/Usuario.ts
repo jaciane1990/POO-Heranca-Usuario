@@ -9,7 +9,7 @@ export class Usuario {
     this.#senha = '123'; // atributo "protegido" (por convenção, usando _)
   }
 
-  autenticar(senha: string) {
+  autenticar(senha: string): boolean {
     return this.#senha === senha;
   }
 
